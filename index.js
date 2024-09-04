@@ -12,7 +12,19 @@ const sketch = () => {
   return ({ context, width, height }) => {
     context.fillStyle = '#8e595a';
     context.fillRect(0, 0, width, height);
+
+    context.save();
+    parcelMaker(context, 50, 50, 10)
+    ctx.restore();
+    
   };
 };
+
+const parcelMaker = (ctx, x, y, a) => {
+  ctx.save();
+  ctx.fillStyle = random.pick(risoColors).hex;
+  ctx.fillRect();
+  ctx.restore();
+}
 
 canvasSketch(sketch, settings);
